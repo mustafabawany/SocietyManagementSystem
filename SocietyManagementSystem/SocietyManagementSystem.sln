@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocietyManagementSystem", "SocietyManagementSystem\SocietyManagementSystem.csproj", "{263F57B5-5B15-4460-8A57-62C00CD44271}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{263F57B5-5B15-4460-8A57-62C00CD44271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263F57B5-5B15-4460-8A57-62C00CD44271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263F57B5-5B15-4460-8A57-62C00CD44271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263F57B5-5B15-4460-8A57-62C00CD44271}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA18C8D5-CED3-4722-9DA4-553F23B05AE0}
+	EndGlobalSection
+EndGlobal

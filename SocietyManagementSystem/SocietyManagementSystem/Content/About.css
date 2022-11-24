@@ -1,0 +1,329 @@
+﻿* {
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+/* HERO SECTION  */
+.carousel-inner .carousel-item img {
+    height: 500px;
+    /* height: 50%; */
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../util/images/AboutPage/Hero1.jpg");
+}
+
+.hero-image2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../util/images/AboutPage/Hero2.jpg");
+}
+
+.hero-image3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../util/images/AboutPage/Hero1.jpg");
+}
+/* HERO SECTION ^^^   */
+
+/* ABOUT US SECTION  */
+.about-us-section {
+    width: 100%;
+    min-height: 70vh;
+    background-color: white;
+}
+
+.about-us-container {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.content-section {
+    float: right;
+    width: 70%;
+}
+
+    .content-section .title {
+        text-transform: uppercase;
+        font-size: 28px;
+    }
+
+.image-section {
+    float: left;
+    width: 30%;
+}
+
+    .image-section img {
+        width: 80%;
+        height: 20rem;
+        /* width: 100%;
+	height: auto; */
+    }
+
+.content-section .main-content h3 {
+    margin-top: 20px;
+    color: #5d5d5d;
+    font-size: 21px;
+}
+
+.content-section .main-content p {
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.content-section .main-content .button {
+    margin-top: 30px;
+}
+
+    .content-section .main-content .button a {
+        background-color: #3d3d3d;
+        padding: 12px 40px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 25px;
+        letter-spacing: 1.5px;
+    }
+
+        .content-section .main-content .button a:hover {
+            background-color: #4f119e;
+            color: #fff;
+        }
+
+.content-section .social {
+    margin: 40px 20px;
+}
+
+    .content-section .social i {
+        color: #4f119e;
+        font-size: 30px;
+        padding: 0px 10px;
+    }
+
+        .content-section .social i:hover {
+            color: #3d3d3d;
+        }
+
+/* ABOUT US SECTION ^^   */
+
+
+/* ANNOUCEMENTS SECTION  */
+.announcements-section {
+    width: 100%;
+    min-height: 80vh;
+    background-color: white;
+}
+
+.annoucement-section {
+    float: left;
+    width: 70%;
+}
+
+.announce-image-section {
+    float: right;
+    width: 30%;
+}
+
+.about-us-section {
+    width: 100%;
+    min-height: 70vh;
+    background-color: white;
+}
+
+.annnounce-us-container {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.content-section {
+    float: right;
+    width: 70%;
+}
+
+    .content-section .title {
+        text-transform: uppercase;
+        font-size: 28px;
+    }
+
+.image-section {
+    float: left;
+    width: 30%;
+}
+
+    .image-section img {
+        width: 80%;
+        height: 20rem;
+        /* width: 100%;
+	height: auto; */
+    }
+
+.annoucement-section .main-content h3 {
+    margin-top: 20px;
+    color: #5d5d5d;
+    font-size: 21px;
+}
+
+.annoucement-section .main-content p {
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.annoucement-section .main-content .button {
+    margin-top: 30px;
+}
+
+    .annoucement-section .main-content .button a {
+        background-color: #3d3d3d;
+        padding: 12px 40px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 25px;
+        letter-spacing: 1.5px;
+    }
+
+        .annoucement-section .main-content .button a:hover {
+            background-color: #4f119e;
+            color: #fff;
+        }
+
+.annoucement-section .social {
+    margin: 40px 20px;
+}
+
+    .annoucement-section .social i {
+        color: #4f119e;
+        font-size: 30px;
+        padding: 0px 10px;
+    }
+
+        .annoucement-section .social i:hover {
+            color: #3d3d3d;
+        }
+
+/* ANNOUCEMENTS SECTION  */
+
+
+/* OUR TEAM SECTION  */
+.team .member {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: white;
+    overflow: hidden;
+}
+
+    .team .member .member-img {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .team .member .social {
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        right: 0;
+        opacity: 0;
+        transition: ease-in-out 0.3s;
+        text-align: center;
+    }
+
+    .team .member:hover .social {
+        opacity: 1;
+        bottom: 15px;
+    }
+
+    .team .member .social a {
+        transition: color 0.3s;
+        color: #111;
+        margin: 0 3px;
+        padding-top: 2px;
+        border-radius: 50px;
+        width: 36px;
+        height: 36px;
+        background: purple;
+        display: inline-block;
+        color: #fff;
+        transition: ease-in-out 0.3s;
+    }
+
+        .team .member .social a:hover {
+            background-color: #111;
+        }
+
+    .team .member .social i {
+        font-size: 18px;
+    }
+
+    .team .member .member-info {
+        padding: 25px 15px;
+        background: white;
+        background-color: white;
+    }
+
+        .team .member .member-info h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: black;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+.img-fluid {
+    object-fit: cover;
+    width: 236px;
+    height: 236px;
+}
+
+.team .member .member-info span {
+    text-align: center;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #aaa;
+}
+
+.member-info {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 1px solid #ccc;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+
+    .section-title h2 {
+        color: black;
+        font-size: 32px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        position: relative;
+    }
+
+    .section-title p {
+        color: black;
+        margin-bottom: 0;
+    }
+
+.section-bg {
+    color: #fff;
+}
+
+.row {
+    margin-top: 10px;
+    ;
+}
+
+/* OUR TEAM SECTION  */

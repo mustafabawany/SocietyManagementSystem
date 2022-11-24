@@ -1,0 +1,86 @@
+﻿.demo-wrap {
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+}
+
+.demo-bg {
+    opacity: 0.2;
+    position: absolute;
+    width: 100%;
+}
+
+.demo-content {
+    position: relative;
+    padding: 32% 0%;
+    color: #242c42;
+    text-align: center;
+}
+
+.demo-content h1 {
+    font-weight: 700;
+    font-size: 64px;
+    text-transform: capitalize;
+}
+
+.sideimg {
+    margin: 4% 0%;
+    z-index: 1;
+    position: relative;
+}
+
+.box {
+    background-color: #242c42;
+    height: 350px;
+    width: 450px;
+    position: absolute;
+    z-index: -1;
+    top: 10%;
+    right: -10%;
+}
+
+.roundimg {
+    border-radius: 50%;
+    margin-bottom: 50px;
+    vertical-align: middle;
+    height: 180px;
+    margin-top: -50px;
+}
+
+.card {
+    background: #242c42;
+    margin-top: 40px;
+    margin-left: 50px;
+    padding: 10px 20px 35px 20px;
+    margin-bottom: 30px;
+}
+
+.cards_wrap {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.row {
+    margin: auto;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.btn {
+    outline: 2px solid white;
+    border-radius: 0%;
+    background-color: #242c42;
+}
+
+.readbtn {
+    margin: auto;
+}
+
+.card-title {
+    color: white;
+}

@@ -1,0 +1,52 @@
+﻿body {
+}
+/* CAROUSEL SECTION  */
+
+#carousel {
+    margin-bottom: 3%;
+}
+
+.carousel-item {
+    background-color: white;
+}
+
+
+
+/* EVENT SECTION  */
+
+.upcoming h1, .past h1 {
+    margin-left: 1%;
+    margin-bottom: 3%;
+}
+
+.upcoming, .past {
+    margin-bottom: 3rem;
+}
+
+.card {
+    margin: 0 auto;
+    margin-bottom: 10%;
+}
+
+hr {
+    width: 25%;
+    margin: 3% auto;
+    border: 2px solid #242c42;
+}
+
+.event-type {
+    background-color: #242c42;
+    color:white;
+    position: relative;
+    width: 35%;
+    text-align: center;
+    padding: 2%;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.details {
+    font-size: 14px;
+}

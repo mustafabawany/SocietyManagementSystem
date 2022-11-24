@@ -1,0 +1,26 @@
+﻿* {
+    font-family: 'Poppins';
+}
+
+.navbar {
+    color: black;
+    font-weight: 400;
+}
+
+/* FOOTER SECTION  */
+
+.footer-icon {
+    margin: 0.5rem;
+}
+
+#footer {
+    text-align: center;
+    padding: 3% 15%;
+    background-color: #242c42;
+    color: white;
+}
+
+#footer p {
+    padding-top: 1rem;
+    font-weight: lighter;
+}
