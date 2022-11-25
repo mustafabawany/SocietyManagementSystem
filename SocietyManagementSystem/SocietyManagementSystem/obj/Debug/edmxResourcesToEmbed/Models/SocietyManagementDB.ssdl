@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SocietyMangementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Society_id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Event_Type" Type="varchar(max)" Nullable="false" />
+    <Property Name="Guest_Name" Type="varchar(max)" />
+    <Property Name="Venue" Type="varchar(max)" Nullable="false" />
+    <Property Name="Date_Time" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FinanceDepartment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Position" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Event_id" Type="int" Nullable="false" />
+    <Property Name="Student_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Society">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="President_id" Type="int" Nullable="false" />
+    <Property Name="Vice_President_id" Type="int" Nullable="false" />
+    <Property Name="Treasurer_id" Type="int" Nullable="false" />
+    <Property Name="Gs_id" Type="int" Nullable="false" />
+    <Property Name="Faculty_Head_id" Type="int" Nullable="false" />
+    <Property Name="Faculty_Cohead_id" Type="int" />
+    <Property Name="Budget_approver_id" Type="int" />
+    <Property Name="Budget" Type="int" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Email" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Employement_Type" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Event__Society_i__44FF419A">
+    <End Role="Society" Type="Self.Society" Multiplicity="1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Society">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="Society_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Registrat__Event__47DBAE45">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="Event_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Registrat__Stude__48CFD27E">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="Student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Society__Budget___3E52440B">
+    <End Role="FinanceDepartment" Type="Self.FinanceDepartment" Multiplicity="0..1" />
+    <End Role="Society" Type="Self.Society" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FinanceDepartment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Society">
+        <PropertyRef Name="Budget_approver_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Society__Faculty__3C69FB99">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="Society" Type="Self.Society" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Society">
+        <PropertyRef Name="Faculty_Head_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Society__Faculty__3D5E1FD2">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="Society" Type="Self.Society" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Society">
+        <PropertyRef Name="Faculty_Cohead_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Society__Gs_id__412EB0B6">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Society" Type="Self.Society" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Society">
+        <PropertyRef Name="Gs_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Society__Preside__403A8C7D">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Society" Type="Self.Society" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Society">
+        <PropertyRef Name="President_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Society__Treasur__4222D4EF">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Society" Type="Self.Society" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Society">
+        <PropertyRef Name="Treasurer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Society__Vice_Pr__3F466844">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Society" Type="Self.Society" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Society">
+        <PropertyRef Name="Vice_President_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SocietyMangementModelStoreContainer">
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FinanceDepartment" EntityType="Self.FinanceDepartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Society" EntityType="Self.Society" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Event__Society_i__44FF419A" Association="Self.FK__Event__Society_i__44FF419A">
+      <End Role="Society" EntitySet="Society" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Registrat__Event__47DBAE45" Association="Self.FK__Registrat__Event__47DBAE45">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Registrat__Stude__48CFD27E" Association="Self.FK__Registrat__Stude__48CFD27E">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Society__Budget___3E52440B" Association="Self.FK__Society__Budget___3E52440B">
+      <End Role="FinanceDepartment" EntitySet="FinanceDepartment" />
+      <End Role="Society" EntitySet="Society" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Society__Faculty__3C69FB99" Association="Self.FK__Society__Faculty__3C69FB99">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Society" EntitySet="Society" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Society__Faculty__3D5E1FD2" Association="Self.FK__Society__Faculty__3D5E1FD2">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Society" EntitySet="Society" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Society__Gs_id__412EB0B6" Association="Self.FK__Society__Gs_id__412EB0B6">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Society" EntitySet="Society" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Society__Preside__403A8C7D" Association="Self.FK__Society__Preside__403A8C7D">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Society" EntitySet="Society" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Society__Treasur__4222D4EF" Association="Self.FK__Society__Treasur__4222D4EF">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Society" EntitySet="Society" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Society__Vice_Pr__3F466844" Association="Self.FK__Society__Vice_Pr__3F466844">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Society" EntitySet="Society" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
