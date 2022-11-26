@@ -8,9 +8,13 @@ namespace SocietyManagementSystem.Controllers
 {
     public class AboutController : Controller
     {
+
         // GET: About
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
+          
+            ViewBag.id = id;
+
             return View();
         }
     }
