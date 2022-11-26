@@ -1,5 +1,4 @@
-﻿@model List<SocietyManagementSystem.Model.Event>
-
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -46,41 +45,158 @@
         <div class="upcoming">
             <h1>Upcoming Events</h1>
             <div class="row">
-                @foreach (var obj in Model){
-                    <div class="col-lg-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
-                            <div class="card-body">
-                                <p class="event-type">@obj.Event_Type</p>
-                                <p class="title">@obj.Name</p>
-                                <p class="details"><i class="fa-regular fa-calendar"></i> @obj.Date_Time</p>
-                                <p class="details"><i class="fa-regular fa-clock"></i> @obj.Date_Time</p>
-                                <p class="details"><i class="fa-solid fa-location-dot"></i> @obj.Venue</p>
-                            </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
                         </div>
                     </div>
-                }
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem; ">
+                        <img src="~/util/images/Events/Event2.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem; ">
+                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem; ">
+                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <hr />
         <div class="past">
             <h1>Past Events</h1>
             <div class="row">
-                @foreach (var obj in Model)
-                {
-                    <div class="col-lg-3">
-                        <div class="card" style="width: 18rem; ">
-                            <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
-                            <div class="card-body">
-                                <p class="event-type">@obj.Event_Type</p>
-                                <p class="title">@obj.Name</p>
-                                <p class="details"><i class="fa-regular fa-calendar"></i> @obj.Date_Time</p>
-                                <p class="details"><i class="fa-regular fa-clock"></i> @obj.Date_Time</p>
-                                <p class="details"><i class="fa-solid fa-location-dot"></i> @obj.Venue</p>
-                            </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem; ">
+                        <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
                         </div>
                     </div>
-                } 
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem; ">
+                        <img src="~/util/images/Events/Event2.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem; ">
+                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem; ">
+                        <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem; ">
+                        <img src="~/util/images/Events/Event2.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem; ">
+                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
+                        <div class="card-body">
+                            <p class="event-type">Seminar</p>
+                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
+                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
+                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
+                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
