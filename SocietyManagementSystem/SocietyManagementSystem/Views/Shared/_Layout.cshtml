@@ -47,12 +47,25 @@
                             Societies
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">DECS</a></li>
-                            <li><a class="dropdown-item" href="#">SPORTICS</a></li>
-                            <li><a class="dropdown-item" href="#">FDSS</a></li>
-                            <li><a class="dropdown-item" href="#">ACM</a></li>
-                            <li><a class="dropdown-item" href="#">ACM-W</a></li>
-                            <li><a class="dropdown-item" href="#">PROCOM</a></li>
+                            <li>
+                                @Html.ActionLink("DECS", "Index", "About", new { id = "Daramatics & Extra Curricular Society" }, new { @class = "dropdown-item" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("SPORTICS", "Index", "About", new { id = "FAST SPORTICS" }, new { @class = "dropdown-item" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("FDSS", "Index", "About", new { id = "FAST Data Science Society" }, new { @class = "dropdown-item" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("ACM-W", "Index", "About", new { id = "ACM WOMEN CHAPTER NUCES" }, new { @class = "dropdown-item" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("ACM", "Index", "About", new { id = "ACM STUDENT CHAPTER" }, new { @class = "dropdown-item" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("CBS", "Index", "About", new { id = "Character Building Society" }, new { @class = "dropdown-item" })
+                            </li>
+
                         </ul>
                     </li>
                     <li class="nav-item">
