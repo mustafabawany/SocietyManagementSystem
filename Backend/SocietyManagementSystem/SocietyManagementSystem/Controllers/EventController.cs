@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using SocietyManagementSystem.Data;
 using SocietyManagementSystem.Models.Entities;
+using System.Net;
 
 namespace SocietyManagementSystem.Controllers
 {
@@ -15,7 +16,7 @@ namespace SocietyManagementSystem.Controllers
         //Get all Societies information . 
         //and print it on EVENTS page.
         private readonly SocietyManagementDbContext SocietyDbContext;
-        public EventController(SocietyManagementDbContext SocietyDbContext) 
+        public EventController(SocietyManagementDbContext SocietyDbContext)
         {
             this.SocietyDbContext = SocietyDbContext;
         }
@@ -29,30 +30,111 @@ namespace SocietyManagementSystem.Controllers
 
         }
 
-        //[HttpPost]
+        [HttpPost]
+        [Route("Add/")]
+        public async Task<IActionResult> AddEvent(EventsViewModel eventViewModel)
+        {
+            HttpResponseMessage returnMessage = new HttpResponseMessage();
 
-        //public async Task<IActionResult> AddEvent(AddEventsViewModel itemviewmodel)
-        //{
-        //    //itemviewmodel.EventId = Guid.NewGuid();
-        //    //var query = SocietyDbContext.Societies.Where(s => s.Name == itemviewmodel.SocietyName).Select(s => new { s.SocietyId });
-        //    //var item = new Event
-        //    //{
-        //    //    EventId = itemviewmodel.EventId,
-        //    //    Name = itemviewmodel.Name,
-        //    //    Event_Type = itemviewmodel.Event_Type,
-        //    //    Guest_name = itemviewmodel.Guest_name,
-        //    //    Venue = itemviewmodel.Venue,
-        //    //    Date_Time = itemviewmodel.Date_Time,
-        //    //    //SocietyId = query
-        //    //};
-            
-            
+            try
+            {
+                eventViewModel.EventId = Guid.NewGuid();
+                var _event = new Event
+                {
+                    EventId = eventViewModel.EventId,
+                    Name = eventViewModel.Name,
+                    Event_Type = eventViewModel.Event_Type,
+                    Guest_name = eventViewModel.Guest_name,
+                    Venue = eventViewModel.Venue,
+                    Date_Time = eventViewModel.Date_Time,
+                    SocietyName = eventViewModel.SocietyName
+                };
 
-        //    //var query = SocietyDbContext.Societies.Where(s => s.Name == SocietyName).Select(s => new {s.SocietyId});
-        //    //SocietyDbContext.Events.FromSql($"insert into Events (EventId , Name, Guest_name, Venue, Date_Time, Society_id) VALUES ({EventId},{Name} , {Guest_Name} , {Venue} , {Date} , {query})");
-        //    //SocietyDbContext.SaveChangesAsync();
+                await SocietyDbContext.Events.AddAsync(_event);
+                await SocietyDbContext.SaveChangesAsync();
+                string message = ($"New Event Added - {_event.EventId}");
 
-        //    return Ok(query); 
-        //}
+                returnMessage = new HttpResponseMessage(HttpStatusCode.Created);
+                returnMessage.RequestMessage = new HttpRequestMessage(HttpMethod.Post, message);
+            }
+            catch (Exception ex)
+            {
+                returnMessage = new HttpResponseMessage(HttpStatusCode.ExpectationFailed);
+                returnMessage.RequestMessage = new HttpRequestMessage(HttpMethod.Post, ex.ToString());
+            }
+
+            return Ok(returnMessage);
+        }
+
+        [HttpPost]
+        [Route("Delete/")]
+        public async Task<IActionResult> DeleteEvent([FromRoute] Guid EventId)
+        {
+            HttpResponseMessage returnMessage = new HttpResponseMessage();
+
+            try
+            {
+                var existingEvent = await SocietyDbContext.Events.FindAsync(EventId);
+                
+                if (existingEvent == null)
+                {
+                    return NotFound();
+                }
+                
+                SocietyDbContext.Events.Remove(existingEvent);
+                await SocietyDbContext.SaveChangesAsync();
+                string message = ($"Event Deleted");
+
+                returnMessage = new HttpResponseMessage(HttpStatusCode.Created);
+                returnMessage.RequestMessage = new HttpRequestMessage(HttpMethod.Post, message);
+            }
+            catch (Exception ex)
+            {
+                returnMessage = new HttpResponseMessage(HttpStatusCode.ExpectationFailed);
+                returnMessage.RequestMessage = new HttpRequestMessage(HttpMethod.Post, ex.ToString());
+            }
+
+            return Ok(returnMessage);
+        }
+
+        [HttpPut]
+        [Route("Update/")]
+        public async Task<IActionResult> UpdateEvent([FromRoute] Guid EventId , [FromRoute] EventsViewModel eventViewModel)
+        {
+
+            // NOT UPDATING IN THE DATABASE, HAVE TO RESOLVE THIS ISSUE
+
+            HttpResponseMessage returnMessage = new HttpResponseMessage();
+
+            try
+            {
+                var existingEvent = await SocietyDbContext.Events.FindAsync(EventId);
+
+                if (existingEvent == null)
+                {
+                    return NotFound();
+                }
+
+                existingEvent.Name = eventViewModel.Name;
+                existingEvent.Event_Type = eventViewModel.Event_Type;
+                existingEvent.Venue = eventViewModel.Venue;
+                existingEvent.Guest_name = eventViewModel.Guest_name;
+                existingEvent.Date_Time = eventViewModel.Date_Time;
+
+                await SocietyDbContext.SaveChangesAsync();
+                
+                string message = ($"Event Updated");
+
+                returnMessage = new HttpResponseMessage(HttpStatusCode.Created);
+                returnMessage.RequestMessage = new HttpRequestMessage(HttpMethod.Post, message);
+            }
+            catch (Exception ex)
+            {
+                returnMessage = new HttpResponseMessage(HttpStatusCode.ExpectationFailed);
+                returnMessage.RequestMessage = new HttpRequestMessage(HttpMethod.Post, ex.ToString());
+            }
+
+            return Ok(returnMessage);
+        }
     }
 }

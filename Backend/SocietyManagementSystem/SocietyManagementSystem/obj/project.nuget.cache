@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "owE8u0JUX+rDvEkyoKlzwNa9d0Qz/8jI0StNv7//U2JPKm73DN2f5gUI0yKFf8PwGWEeC8ffY0yRTLJr2ZrSUg==",
+  "dgSpecHash": "oxuoOqoMJ0jcQLMAi51KrptjboUdtW+CnpJkh9pNFC9GJPei0p2Dt1WfjMiXZ9Km3TIhDY9d4YeR4aq0TkGxxQ==",
   "success": true,
-  "projectFilePath": "E:\\Project\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
+  "projectFilePath": "C:\\Users\\mmust\\Downloads\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mmust\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\mmust\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

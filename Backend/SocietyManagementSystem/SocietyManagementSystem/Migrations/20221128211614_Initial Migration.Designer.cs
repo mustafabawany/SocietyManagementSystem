@@ -12,7 +12,7 @@ using SocietyManagementSystem.Data;
 namespace SocietyManagementSystem.Migrations
 {
     [DbContext(typeof(SocietyManagementDbContext))]
-    [Migration("20221128150857_Initial Migration")]
+    [Migration("20221128211614_Initial Migration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -39,15 +39,15 @@ namespace SocietyManagementSystem.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Guest_name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("SocietyId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("SocietyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Venue")
                         .IsRequired()
@@ -55,7 +55,7 @@ namespace SocietyManagementSystem.Migrations
 
                     b.HasKey("EventId");
 
-                    b.HasIndex("SocietyId");
+                    b.HasIndex("SocietyName");
 
                     b.ToTable("Events");
                 });
@@ -102,9 +102,8 @@ namespace SocietyManagementSystem.Migrations
 
             modelBuilder.Entity("SocietyManagementSystem.Models.Entities.Society", b =>
                 {
-                    b.Property<Guid>("SocietyId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("SocietyName")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Announcement")
                         .IsRequired()
@@ -128,10 +127,6 @@ namespace SocietyManagementSystem.Migrations
                     b.Property<string>("Gs_id")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("President_id")
                         .HasColumnType("nvarchar(450)");
 
@@ -141,7 +136,7 @@ namespace SocietyManagementSystem.Migrations
                     b.Property<string>("Vice_president_id")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("SocietyId");
+                    b.HasKey("SocietyName");
 
                     b.HasIndex("BudgetApproverId");
 
@@ -196,7 +191,7 @@ namespace SocietyManagementSystem.Migrations
                 {
                     b.HasOne("SocietyManagementSystem.Models.Entities.Society", "Society")
                         .WithMany()
-                        .HasForeignKey("SocietyId")
+                        .HasForeignKey("SocietyName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

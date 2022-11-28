@@ -3727,11 +3727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Project\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\mmust\\Downloads\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
       "projectName": "SocietyManagementSystem",
-      "projectPath": "E:\\Project\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
+      "projectPath": "C:\\Users\\mmust\\Downloads\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
       "packagesPath": "C:\\Users\\mmust\\.nuget\\packages\\",
-      "outputPath": "E:\\Project\\SocietyManagementSystem\\SocietyManagementSystem\\obj\\",
+      "outputPath": "C:\\Users\\mmust\\Downloads\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mmust\\AppData\\Roaming\\NuGet\\NuGet.Config",

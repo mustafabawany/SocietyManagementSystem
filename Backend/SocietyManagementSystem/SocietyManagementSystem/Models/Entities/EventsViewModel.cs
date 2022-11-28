@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SocietyManagementSystem.Models.Entities
 {
-    public class AddEventsViewModel
+    public class EventsViewModel
     {
-        public int EventId { get; set; }
+        public Guid EventId { get; set; }
         public string Name { get; set; }
         public string Event_Type { get; set; }
         public string Guest_name { get; set; }

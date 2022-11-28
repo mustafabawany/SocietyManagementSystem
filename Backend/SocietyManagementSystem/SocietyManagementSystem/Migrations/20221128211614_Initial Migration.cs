@@ -55,8 +55,7 @@ namespace SocietyManagementSystem.Migrations
                 name: "Societies",
                 columns: table => new
                 {
-                    SocietyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SocietyName = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Announcement = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Budget = table.Column<int>(type: "int", nullable: false),
                     Presidentid = table.Column<string>(name: "President_id", type: "nvarchar(450)", nullable: true),
@@ -69,7 +68,7 @@ namespace SocietyManagementSystem.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Societies", x => x.SocietyId);
+                    table.PrimaryKey("PK_Societies", x => x.SocietyName);
                     table.ForeignKey(
                         name: "FK_Societies_FinanceDepartments_BudgetApproverId",
                         column: x => x.BudgetApproverId,
@@ -96,19 +95,19 @@ namespace SocietyManagementSystem.Migrations
                     EventId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EventType = table.Column<string>(name: "Event_Type", type: "nvarchar(max)", nullable: false),
-                    Guestname = table.Column<string>(name: "Guest_name", type: "nvarchar(max)", nullable: false),
+                    Guestname = table.Column<string>(name: "Guest_name", type: "nvarchar(max)", nullable: true),
                     Venue = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateTime = table.Column<DateTime>(name: "Date_Time", type: "datetime2", nullable: false),
-                    SocietyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    SocietyName = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Events", x => x.EventId);
                     table.ForeignKey(
-                        name: "FK_Events_Societies_SocietyId",
-                        column: x => x.SocietyId,
+                        name: "FK_Events_Societies_SocietyName",
+                        column: x => x.SocietyName,
                         principalTable: "Societies",
-                        principalColumn: "SocietyId",
+                        principalColumn: "SocietyName",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -138,9 +137,9 @@ namespace SocietyManagementSystem.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Events_SocietyId",
+                name: "IX_Events_SocietyName",
                 table: "Events",
-                column: "SocietyId");
+                column: "SocietyName");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Registrations_EventId",
