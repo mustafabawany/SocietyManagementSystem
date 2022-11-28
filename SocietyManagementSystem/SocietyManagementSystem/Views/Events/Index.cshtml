@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     <link rel="stylesheet" type="text/css" href="~/Content/Events.css" />
@@ -54,8 +53,13 @@
                             <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
                             <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
                             <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                            <button class="btn btn-outline-primary">
+                                REGISTER
+                            </button>
                         </div>
+  
                     </div>
+     
                 </div>
                 <div class="col-lg-3">
                     <div class="card" style="width: 18rem; ">
@@ -66,6 +70,9 @@
                             <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
                             <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
                             <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                            <button class="btn btn-outline-primary">
+                                REGISTER
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -78,6 +85,10 @@
                             <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
                             <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
                             <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                            <button class="btn btn-outline-primary">
+                                @Html.ActionLink("REGISTER", "Index", "Registration","", new { @class = "register" })
+                                @*REGISTER*@    
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -90,6 +101,10 @@
                             <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
                             <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
                             <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                            <button class="btn btn-outline-primary">
+                                @*@Html.ActionLink("REGISTER", "Index", "About", new { id = "FAST Data Science Society" }, new { @class = "btn btn-primary" })*@
+                                REGISTER
+                            </button>
                         </div>
                     </div>
                 </div>

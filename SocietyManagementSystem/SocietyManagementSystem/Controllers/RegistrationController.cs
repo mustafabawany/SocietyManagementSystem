@@ -7,15 +7,12 @@ using System.Web.Mvc;
 namespace SocietyManagementSystem.Controllers
 {
     //[Authorize]
-    public class AboutController : Controller
+
+    public class RegistrationController : Controller
     {
-
-        // GET: About
-        public ActionResult Index(string id)
+        // GET: Registration
+        public ActionResult Index()
         {
-          
-            ViewBag.id = id;
-
             return View();
         }
     }

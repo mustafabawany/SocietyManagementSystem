@@ -11,9 +11,7 @@
 }
 
 
-
 /* EVENT SECTION  */
-
 .upcoming h1, .past h1 {
     margin-left: 1%;
     margin-bottom: 3%;
@@ -49,4 +47,10 @@ hr {
 
 .details {
     font-size: 14px;
+}
+.register {
+    text-decoration: none;
+}
+.register:hover {
+    color:white;
 }

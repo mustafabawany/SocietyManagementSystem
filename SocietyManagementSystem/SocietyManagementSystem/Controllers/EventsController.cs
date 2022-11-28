@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace SocietyManagementSystem.Controllers
 {
+    //[Authorize]
+
     public class EventsController : Controller
     {
         // GET: Events

@@ -123,6 +123,8 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,6 +150,8 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Events.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\Registration.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -204,6 +208,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
