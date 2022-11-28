@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" type="text/css" href="~/Content/Registration.css" />
+
+}
+
+<div class="wrapper">
+    <div class="form-left">
+        <h2 class="text-uppercase">information</h2>
+        <h6>
+            Anatomy Of A Text: Quranic Commentry
+        </h6>
+        <p class="text">
+            <span>Venue : Main Auditorium </span>
+        </p>
+        <p class="text">
+            <span>Date : November 18th, 2022 </span>
+
+        </p>
+        <div class="form-field">
+            <input type="submit" class="account" value="Seminar">
+        </div>
+    </div>
+    <form class="form-right">
+        <h2 class="text-uppercase">Registration form</h2>
+        <div class="row">
+            <div class="col-sm-6 mb-3">
+                <label>First Name</label>
+                <input type="text" name="first_name" id="first_name" class="input-field">
+            </div>
+            <div class="col-sm-6 mb-3">
+                <label>Last Name</label>
+                <input type="text" name="last_name" id="last_name" class="input-field">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 mb-3">
+                <label>Event ID</label>
+                <input type="password" name="pwd" id="pwd" class="input-field">
+            </div>
+            <div class="col-sm-6 mb-3">
+                <label>Student ID</label>
+                <input type="password" name="cpwd" id="cpwd" class="input-field">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="option">
+                I agree to the <a href="#">Terms and Conditions</a>
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="form-field">
+            <input type="submit" value="Register" class="register" name="register">
+        </div>
+    </form>
+</div>
