@@ -99,16 +99,16 @@ namespace SocietyManagementSystem.Controllers
 
         [HttpPut]
         [Route("Update/")]
-        public async Task<IActionResult> UpdateEvent([FromRoute] Guid EventId , [FromRoute] EventsViewModel eventViewModel)
+        //No need of GUID EventID in Route Param
+        
+        public async Task<IActionResult> UpdateEvent( [FromBody] EventsViewModel eventViewModel)
         {
-
-            // NOT UPDATING IN THE DATABASE, HAVE TO RESOLVE THIS ISSUE
 
             HttpResponseMessage returnMessage = new HttpResponseMessage();
 
             try
             {
-                var existingEvent = await SocietyDbContext.Events.FindAsync(EventId);
+                var existingEvent = await SocietyDbContext.Events.FindAsync(eventViewModel.EventId);
 
                 if (existingEvent == null)
                 {

@@ -36,7 +36,8 @@ hr {
     background-color: #242c42;
     color:white;
     position: relative;
-    width: 35%;
+    width: 50%; 
+/*    ye width sahi hai , not working for Ahsan only */
     text-align: center;
     padding: 2%;
 }

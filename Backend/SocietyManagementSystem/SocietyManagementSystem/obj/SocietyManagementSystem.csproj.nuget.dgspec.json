@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mmust\\Downloads\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj": {}
+    "D:\\University\\7th-Semester\\IPT\\Project2\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mmust\\Downloads\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj": {
+    "D:\\University\\7th-Semester\\IPT\\Project2\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mmust\\Downloads\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
+        "projectUniqueName": "D:\\University\\7th-Semester\\IPT\\Project2\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
         "projectName": "SocietyManagementSystem",
-        "projectPath": "C:\\Users\\mmust\\Downloads\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
-        "packagesPath": "C:\\Users\\mmust\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mmust\\Downloads\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\obj\\",
+        "projectPath": "D:\\University\\7th-Semester\\IPT\\Project2\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "D:\\University\\7th-Semester\\IPT\\Project2\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mmust\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

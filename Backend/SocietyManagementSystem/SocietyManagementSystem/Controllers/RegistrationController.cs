@@ -39,11 +39,11 @@ namespace SocietyManagementSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostRegistraion(Guid eventId, [FromBody] RegistrationViewModel model)
+        public async Task<IActionResult> PostRegistraion([FromBody] RegistrationViewModel model)
         {
             Registration _registration = new Registration();
             _registration.StudentId = model.StudentId;
-            _registration.EventId = eventId;
+            _registration.EventId = model.eventId;
 
 
             HttpResponseMessage returnMessage = new HttpResponseMessage();

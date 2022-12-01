@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<SocietyManagementSystem.Models.EventInfo>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     <link rel="stylesheet" type="text/css" href="~/Content/Events.css" />
@@ -38,181 +39,101 @@
     </div>
 </div>
 
-
 <div id="Events">
     <div class="container-fluid">
         <div class="upcoming">
             <h1>Upcoming Events</h1>
+
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                            <button class="btn btn-outline-primary">
-                                REGISTER
-                            </button>
+                @foreach (var c1 in Model)
+                {
+                 
+                    if (c1.Date_Time.Date >= DateTime.Now.Date)
+                    {
+                        <div class="col-lg-3">
+                            <div class="card" style="width: 18rem;">
+                                <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
+
+                                <div class="card-body">
+
+
+
+                                    <p class="event-type"> @Html.DisplayFor(m => c1.Event_Type)</p>
+
+                                    <p class="title"> @Html.DisplayFor(m => c1.Name)</p>
+                                    <p class="details"><i class="fa-solid fa-bullhorn"></i> @Html.DisplayFor(m => c1.Guest_name)</p>
+
+
+                                    @*TODO : CHANGE THIS SOCIETY NAME*@
+
+                                    <p class="details"><i class="fa-regular fa-building"></i> ACM</p>
+
+                                    @*TODO : CHANGE THIS DATE FORMAT*@
+                                    <p class="details"><i class="fa-regular fa-calendar"></i> @Html.DisplayFor(m => c1.Date_Time.Date)</p>
+                                    <p class="details"><i class="fa-regular fa-clock"></i> @Html.DisplayFor(m => c1.Date_Time.TimeOfDay)</p>
+                                    <p class="details"><i class="fa-solid fa-location-dot"></i> @Html.DisplayFor(m => c1.Venue)</p>
+                                    @Html.ActionLink("REGISTER", "Index", "Registration", new { id = c1.EventId }, new { @class = "btn btn-outline-primary" })
+
+                                </div>
+
+
+
+                            </div>
+
                         </div>
-  
-                    </div>
-     
-                </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem; ">
-                        <img src="~/util/images/Events/Event2.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                            <button class="btn btn-outline-primary">
-                                REGISTER
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem; ">
-                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                            <button class="btn btn-outline-primary">
-                                @Html.ActionLink("REGISTER", "Index", "Registration","", new { @class = "register" })
-                                @*REGISTER*@    
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem; ">
-                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                            <button class="btn btn-outline-primary">
-                                @*@Html.ActionLink("REGISTER", "Index", "About", new { id = "FAST Data Science Society" }, new { @class = "btn btn-primary" })*@
-                                REGISTER
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                    }
+
+                }  
             </div>
         </div>
         <hr />
         <div class="past">
             <h1>Past Events</h1>
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem; ">
-                        <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+                @foreach (var c1 in Model)
+                {
+
+                    if (c1.Date_Time.Date <= DateTime.Now.Date)
+                    {
+
+                        <div class="col-lg-3">
+                            <div class="card" style="width: 18rem;">
+                                <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
+
+                                <div class="card-body">
+
+
+
+                                    <p class="event-type"> @Html.DisplayFor(m => c1.Event_Type)</p>
+                                    <p class="title"> @Html.DisplayFor(m => c1.Name)</p>
+
+                                    <p class="details"><i class="fa-solid fa-bullhorn"></i> @Html.DisplayFor(m => c1.Guest_name)</p>
+
+
+                                    @*TODO : CHANGE THIS SOCIETY NAME*@
+
+                                    <p class="details"><i class="fa-regular fa-building"></i> ACM</p>
+                                    <p class="details"><i class="fa-regular fa-calendar"></i> @Html.DisplayFor(m => c1.Date_Time.Date)</p>
+                                    <p class="details"><i class="fa-regular fa-clock"></i> @Html.DisplayFor(m => c1.Date_Time.TimeOfDay)</p>
+                                    <p class="details"><i class="fa-solid fa-location-dot"></i> @Html.DisplayFor(m => c1.Venue)</p>
+                                    @Html.ActionLink("REGISTER", "Index", "Registration", new { id = c1.EventId }, new { @class = "btn btn-outline-primary" })
+
+                                </div>
+
+
+
+                            </div>
+
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem; ">
-                        <img src="~/util/images/Events/Event2.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem; ">
-                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                        </div>
-                    </div>
-                </div>
+                    }
+                }
+
+
+
+
+
             </div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem; ">
-                        <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem; ">
-                        <img src="~/util/images/Events/Event2.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem; ">
-                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="~/util/images/Events/Event3.png" class="card-img-top" style="height: 12rem;">
-                        <div class="card-body">
-                            <p class="event-type">Seminar</p>
-                            <p class="title">Anatomy Of A Text: Quranic Commentry In The</p>
-                            <p class="details"><i class="fa-regular fa-calendar"></i> November 18th, 2022</p>
-                            <p class="details"><i class="fa-regular fa-clock"></i> 5:00 pm</p>
-                            <p class="details"><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
         </div>
     </div>
 </div>
