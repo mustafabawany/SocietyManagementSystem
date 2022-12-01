@@ -156,3 +156,5 @@ D:\University\7th-Semester\IPT\Project2\SocietyManagementSystem\SocietyManagemen
 D:\University\7th-Semester\IPT\Project2\SocietyManagementSystem\SocietyManagementSystem\SocietyManagementSystem\obj\Debug\SocietyManagementSystem.csproj.CopyComplete
 D:\University\7th-Semester\IPT\Project2\SocietyManagementSystem\SocietyManagementSystem\SocietyManagementSystem\obj\Debug\SocietyManagementSystem.dll
 D:\University\7th-Semester\IPT\Project2\SocietyManagementSystem\SocietyManagementSystem\SocietyManagementSystem\obj\Debug\SocietyManagementSystem.pdb
+D:\University\7th-Semester\IPT\Project2\SocietyManagementSystem\SocietyManagementSystem\SocietyManagementSystem\bin\System.Net.Http.Formatting.dll
+D:\University\7th-Semester\IPT\Project2\SocietyManagementSystem\SocietyManagementSystem\SocietyManagementSystem\bin\System.Net.Http.Formatting.xml

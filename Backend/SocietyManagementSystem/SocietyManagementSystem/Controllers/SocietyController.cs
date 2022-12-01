@@ -103,14 +103,15 @@ namespace SocietyManagementSystem.Controllers
                              Name = Std.Name,
                              Position = "Faculty Co Head"
                          };
+            
             var result = query.Union(query2).Union(query3).Union(query4).Union(query5).Union(query6);
             
             return Ok(result);
         }
 
         [HttpPut]
-        [Route("Update/")]
-        public async Task<IActionResult> EditSociety([FromRoute] string SocietyName, [FromRoute] SocietyViewModel societyViewModel)
+        [Route("Update")]
+        public async Task<IActionResult> EditSociety(string SocietyName, [FromBody] SocietyViewModel societyViewModel)
         {
             // Required ka issue araha hai, not working properly
 

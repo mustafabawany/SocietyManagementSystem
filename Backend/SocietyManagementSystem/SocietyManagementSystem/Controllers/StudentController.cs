@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Azure.Messaging;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SocietyManagementSystem.Data;
 using SocietyManagementSystem.Models.Entities;
@@ -12,16 +13,18 @@ namespace SocietyManagementSystem.Controllers
         //Local private readonly prop.
         private readonly SocietyManagementDbContext SocietyDbContext;
         //Constructor injection of DBContext
-        public StudentController(SocietyManagementDbContext SocietyDbContext) {
+        public StudentController(SocietyManagementDbContext SocietyDbContext)
+        {
 
             this.SocietyDbContext = SocietyDbContext;
 
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllStudentData() {
+        public async Task<IActionResult> GetAllStudentData()
+        {
 
             //GET ALL STUDENT INFO FROM DB
-            return Ok(await SocietyDbContext.Students.ToListAsync()) ;
+            return Ok(await SocietyDbContext.Students.ToListAsync());
 
         }
 
@@ -29,12 +32,12 @@ namespace SocietyManagementSystem.Controllers
         [HttpGet("GetDataById")]
         public async Task<IActionResult> GetSpecificStudentData(int Id)
         {
-                
+
             //GET ALL STUDENT INFO FROM DB
             //return Ok(await SocietyDbContext.Students.FirstOrDefaultAsync(x=>x.StudentId==Id));
 
             var studentData = await SocietyDbContext.Students.FindAsync(Id);
-            if(studentData == null)
+            if (studentData == null)
             {
                 return NotFound();
             }
@@ -43,7 +46,27 @@ namespace SocietyManagementSystem.Controllers
         }
 
 
-        //Login Screen - > Check if student credentials exist in Students TABLE 
+        //Login Screen - > Check if student credentials exist in Students TABLE
+        [HttpGet("{Id}/{password}")]
+        public async Task<IActionResult> Authentication(string Id, string password)
+        {
+
+            var _Id = await SocietyDbContext.Students.FindAsync(Id);
+            if (_Id != null)
+            {
+                if (_Id.Password == password)
+                {
+                    return Ok("Account Found");
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+
+            return NotFound();
+
+        }
 
 
 
@@ -51,3 +74,4 @@ namespace SocietyManagementSystem.Controllers
 
     }
 }
+

@@ -1,5 +1,7 @@
-﻿
+﻿@model List<SocietyManagementSystem.Models.SocietyHierarchy>
+
 @{
+
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     <link rel="stylesheet" type="text/css" href="~/Content/About.css" />
@@ -111,7 +113,7 @@
     <div class="container-team">
         <div class="section-title">
 
-     
+
             <h2>
                 @ViewBag.id
             </h2>
@@ -119,124 +121,72 @@
                 <h2 style="color: grey;"> HIERARCHY</h2>
             </div>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
+                A leader is best when people barely know he exists, when his work is done, his aim fulfilled, they will say: we did it ourselves.Societies in FAST NUCES Karachi tends to instill great qualities
+                in their students by recruiting them into socities and giving them the right exposure.
             </p>
         </div>
         <div class="section-title" style="margin-top: 20px; ">
             <h2 style="color: grey;">FACULTY HEADS</h2>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="~/util/images/AboutPage/Team.jpeg" class="img-fluid">
-                        <div class="social">
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+            @foreach (var c1 in Model)
+            {
+                if (c1.position == "Faculty Head" || c1.position == "Faculty Co Head")
+                {
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-img">
+                                <img src="~/util/images/AboutPage/Team.jpeg" class="img-fluid">
+                                <div class="social">
+                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
 
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>@Html.DisplayFor(m => c1.name)</h4>
+                                <span>@Html.DisplayFor(m => c1.position)</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="member-info">
-                        <h4>Ahsan Akhtar</h4>
-                        <span>ABCD</span>
-                    </div>
-                </div>
-            </div>
-            <!-- 2nd column  -->
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="~/util/images/AboutPage/Team.jpeg" class="img-fluid">
-                        <div class="social">
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                }
+            }
 
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4>Ahsan Akhtar</h4>
-                        <span>Director</span>
-                    </div>
-                </div>
-            </div>
-            <!-- 3rd column  -->
         </div>
         <!-- Jump to new row  -->
         <div class="row">
             <div class="section-title" style="margin-top: 20px; ">
                 <h2 style="color: grey;">STUDENT EX-COM</h2>
             </div>
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="~/util/images/AboutPage/Team.jpeg" class="img-fluid">
-                        <div class="social">
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+            @foreach (var c1 in Model)
+            {
+                //|| c1.position != "Faculty Head"
+                if (c1.position == "Treasurer" ||  c1.position == "General Secretary" || c1.position == "Vice President" || c1.position == "President")
+                {
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-img">
+                                <img src="~/util/images/AboutPage/Team.jpeg" class="img-fluid">
+                                <div class="social">
+                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
 
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>@Html.DisplayFor(m => c1.name)</h4>
+                                <span>@Html.DisplayFor(m => c1.position)</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="member-info">
-                        <h4>Ahsan Akhtar</h4>
-                        <span>Director</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="~/util/images/AboutPage/Team.jpeg" class="img-fluid">
-                        <div class="social">
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                }
+            }
 
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4>Ahsan Akhtar</h4>
-                        <span>Director</span>
-                    </div>
-                </div>
-            </div> <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="~/util/images/AboutPage/Team.jpeg" class="img-fluid">
-                        <div class="social">
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
 
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4>Ahsan Akhtar</h4>
-                        <span>Director</span>
-                    </div>
-                </div>
-            </div> <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="~/util/images/AboutPage/Team.jpeg" class="img-fluid">
-                        <div class="social">
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
 
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4>Ahsan Akhtar</h4>
-                        <span>Director</span>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>

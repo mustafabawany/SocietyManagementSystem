@@ -98,15 +98,15 @@
     margin: 40px 20px;
 }
 
-    .content-section .social i {
-        color: #4f119e;
-        font-size: 30px;
-        padding: 0px 10px;
-    }
+.content-section .social i {
+color: #4f119e;
+font-size: 30px;
+padding: 0px 10px;
+}
 
-        .content-section .social i:hover {
-            color: #3d3d3d;
-        }
+.content-section .social i:hover {
+    color: #3d3d3d;
+}
 
 /* ABOUT US SECTION ^^   */
 
