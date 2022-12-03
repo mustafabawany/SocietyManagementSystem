@@ -134,6 +134,8 @@
     <Compile Include="Models\EventAndRegistrationParent.cs" />
     <Compile Include="Models\EventInfo.cs" />
     <Compile Include="Models\EventRegistration.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Society.cs" />
     <Compile Include="Models\SocietyHierarchy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -155,6 +157,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\EditEvent.css" />
     <Content Include="Content\Events.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\Login.css" />
@@ -217,6 +220,9 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Events\GetSocietyEvent.cshtml" />
+    <Content Include="Views\Events\UpdateEvent.cshtml" />
+    <Content Include="Views\Events\AddEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -47,12 +47,14 @@
             <div class="row">
                 @foreach (var c1 in Model)
                 {
-                 
+
                     if (c1.Date_Time.Date >= DateTime.Now.Date)
                     {
                         <div class="col-lg-3">
                             <div class="card" style="width: 18rem;">
                                 <img src="~/util/images/Events/Event1.png" class="card-img-top" style="height: 12rem;">
+
+
 
                                 <div class="card-body">
 
@@ -64,11 +66,9 @@
                                     <p class="details"><i class="fa-solid fa-bullhorn"></i> @Html.DisplayFor(m => c1.Guest_name)</p>
 
 
-                                    @*TODO : CHANGE THIS SOCIETY NAME*@
 
-                                    <p class="details"><i class="fa-regular fa-building"></i> ACM</p>
+                                <p class="details"><i class="fa-regular fa-building"></i> @Html.DisplayFor(m => c1.SocietyName)</p>
 
-                                    @*TODO : CHANGE THIS DATE FORMAT*@
                                     <p class="details"><i class="fa-regular fa-calendar"></i> @Html.DisplayFor(m => c1.Date_Time.Date)</p>
                                     <p class="details"><i class="fa-regular fa-clock"></i> @Html.DisplayFor(m => c1.Date_Time.TimeOfDay)</p>
                                     <p class="details"><i class="fa-solid fa-location-dot"></i> @Html.DisplayFor(m => c1.Venue)</p>
@@ -83,7 +83,27 @@
                         </div>
                     }
 
-                }  
+                }
+                @*Show this DIV(edit button) only if the person is authorized*@
+                @if (@ViewBag.isAdmin.ToString()== "True")
+                {
+                    <div class="col-lg-3">
+
+
+                        <div class="card-body-icon">
+                            <a href="/Events/GetSocietyEvent">
+
+                                <i class="fa fa-plus-circle" style="color:black;"> </i>
+
+                            </a>
+
+
+
+                        </div>
+
+                    </div>
+                }
+
             </div>
         </div>
         <hr />
@@ -93,7 +113,7 @@
                 @foreach (var c1 in Model)
                 {
 
-                    if (c1.Date_Time.Date <= DateTime.Now.Date)
+                    if (c1.Date_Time.Date < DateTime.Now.Date)
                     {
 
                         <div class="col-lg-3">
@@ -110,9 +130,8 @@
                                     <p class="details"><i class="fa-solid fa-bullhorn"></i> @Html.DisplayFor(m => c1.Guest_name)</p>
 
 
-                                    @*TODO : CHANGE THIS SOCIETY NAME*@
 
-                                    <p class="details"><i class="fa-regular fa-building"></i> ACM</p>
+                                    <p class="details"><i class="fa-regular fa-building"></i> @Html.DisplayFor(m => c1.SocietyName)</p>
                                     <p class="details"><i class="fa-regular fa-calendar"></i> @Html.DisplayFor(m => c1.Date_Time.Date)</p>
                                     <p class="details"><i class="fa-regular fa-clock"></i> @Html.DisplayFor(m => c1.Date_Time.TimeOfDay)</p>
                                     <p class="details"><i class="fa-solid fa-location-dot"></i> @Html.DisplayFor(m => c1.Venue)</p>
@@ -126,6 +145,27 @@
 
                         </div>
                     }
+                }
+
+                @*Show this DIV(edit button) only if the person is authorized*@
+
+                @if (@ViewBag.isAdmin == "True")
+                {
+                    <div class="col-lg-3">
+
+
+                        <div class="card-body-icon">
+                            <a href="/Events/GetSocietyEvent">
+
+                                <i class="fa fa-plus-circle" style="color:black;"> </i>
+
+                            </a>
+
+
+
+                        </div>
+
+                    </div>
                 }
 
 
