@@ -21,78 +21,108 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="~/util/images/logo.png" style="height: 70px;"/>
+                <img src="~/util/images/logo.png" style="height: 70px;" />
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            @if (User.Identity.IsAuthenticated)
+            {
 
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Admissions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Study</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/Events">News & Events</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Societies
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                @Html.ActionLink("DECS", "Index", "About", new { id = "DECS" }, new { @class = "dropdown-item" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("SPORTICS", "Index", "About", new { id = "SPORTICS" }, new { @class = "dropdown-item" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("FDSS", "Index", "About", new { id = "FDSS" }, new { @class = "dropdown-item" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("ACM-W", "Index", "About", new { id = "ACM-W" }, new { @class = "dropdown-item" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("ACM", "Index", "About", new { id = "ACM" }, new { @class = "dropdown-item" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("CBS", "Index", "About", new { id = "CBS" }, new { @class = "dropdown-item" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("WBS", "Index", "About", new { id = "WEB MASTER" }, new { @class = "dropdown-item" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("TLC", "Index", "About", new { id = "TLC" }, new { @class = "dropdown-item" })
-                            </li>
-         
+                <h2></h2>
 
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
+                        </li>
 
-                </ul>
-            </div>
+
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/Events">News & Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Societies
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Html.ActionLink("DECS", "Index", "About", new { id = "DECS" }, new { @class = "dropdown-item" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("SPORTICS", "Index", "About", new { id = "SPORTICS" }, new { @class = "dropdown-item" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("FDSS", "Index", "About", new { id = "FDSS" }, new { @class = "dropdown-item" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("ACM-W", "Index", "About", new { id = "ACM-W" }, new { @class = "dropdown-item" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("ACM", "Index", "About", new { id = "ACM" }, new { @class = "dropdown-item" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("CBS", "Index", "About", new { id = "CBS" }, new { @class = "dropdown-item" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("WBS", "Index", "About", new { id = "WEB MASTER" }, new { @class = "dropdown-item" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("TLC", "Index", "About", new { id = "TLC" }, new { @class = "dropdown-item" })
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle icon-nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true">
+                                    <span style="margin-left:5px;">
+                                        @User.Identity.Name
+
+                                    </span>
+                                </i>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="nav-item" style="font-weight:bolder">
+                                    <a class="nav-link" aria-current="page" href="#">Edit Profile</a>
+
+                                </li>
+                                <li class="nav-item">
+
+                                    @Html.ActionLink("Logout", "Logout", "Login", "", new { @class = "nav-link" })
+                                </li>
+                            </ul>
+
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            }
         </div>
     </nav>
     <!--NAVBAR-->
 
     @RenderBody()
-    @*<footer id="footer">
-        <i class="footer-icon fab fa-twitter"></i>
-        <i class="footer-icon fab fa-facebook-f"></i>
-        <i class="footer-icon fab fa-instagram"></i>
-        <i class="footer-icon fas fa-envelope"></i>
-        <p>&copy; Copyright @DateTime.Now.Year FAST Society Management</p>
-    </footer>*@
+    @if (User.Identity.IsAuthenticated)
+    {
+        <footer id="footer">
+                <i class="footer-icon fab fa-twitter"></i>
+                <i class="footer-icon fab fa-facebook-f"></i>
+                <i class="footer-icon fab fa-instagram"></i>
+                <i class="footer-icon fas fa-envelope"></i>
+                <p>&copy; Copyright @DateTime.Now.Year FAST Society Management</p>
+            </footer>
+    }
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap.css")

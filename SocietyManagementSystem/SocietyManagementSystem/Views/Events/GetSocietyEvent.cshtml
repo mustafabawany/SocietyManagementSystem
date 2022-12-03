@@ -1,0 +1,81 @@
+﻿@model List<SocietyManagementSystem.Models.EventInfo>
+@{
+    ViewBag.Title = "EditPage";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" type="text/css" href="~/Content/EditEvent.css" />
+
+}
+
+
+
+<br />
+
+<h2 style="margin-left:10px;">EVENTS LIST</h2>
+<br />
+<br />
+<a>
+
+</a>
+<table class="table">
+    <thead style="margin-left:10px;">
+
+        <tr>
+
+            <th>
+                Event Name
+            </th>
+            <th>
+                Date & Time
+            </th>
+            <th>
+                Venue
+            </th>
+
+            <th>
+                Speaker
+            </th>
+            <th>
+                Society Name
+            </th>
+            <th>
+                Event Type
+            </th>
+            <th>
+            </th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.Name)</td>
+                <td>@Html.DisplayFor(m => item.Date_Time)</td>
+                <td>@Html.DisplayFor(m => item.Venue)</td>
+                <td>@Html.DisplayFor(m => item.Guest_name)</td>
+                <td>@Html.DisplayFor(m => item.SocietyName)</td>
+                <td>@Html.DisplayFor(m => item.Event_Type)</td>
+
+                <td>
+
+                    @Html.ActionLink("Update", "UpdateEvent", "Events", new { eventId = item.EventId }, new { @class = "btn btn-outline-primary" })
+
+                 
+                    @Html.ActionLink("Delete", "DeleteEvent", "Events", new { eventId = item.EventId }, new { @class = "btn btn-outline-primary" })
+
+               
+                    <a href="/Events/AddEvent" class="btn btn-outline-primary" style="margin-right:5px;">
+                        Add Event
+                    </a>
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+
+
+</table>

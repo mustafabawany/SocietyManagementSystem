@@ -105,7 +105,7 @@ namespace SocietyManagementSystem.Controllers
                          };
             
             var result = query.Union(query2).Union(query3).Union(query4).Union(query5).Union(query6);
-            
+          
             return Ok(result);
         }
 

@@ -14,7 +14,8 @@ using SocietyManagementSystem.Models;
 
 namespace SocietyManagementSystem.Controllers
 {
-    //[Authorize]
+    [Authorize]
+
 
     public class RegistrationController : Controller
     {
@@ -59,7 +60,7 @@ namespace SocietyManagementSystem.Controllers
         {
 
             var json = new
-            {
+            { 
                 obj._EventRegistration.studentId,
                 obj._EventRegistration.firstName,
                 obj._EventRegistration.lastName,
