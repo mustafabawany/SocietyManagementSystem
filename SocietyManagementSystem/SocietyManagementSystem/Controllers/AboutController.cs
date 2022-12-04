@@ -10,7 +10,7 @@ using SocietyManagementSystem.Models;
 
 namespace SocietyManagementSystem.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class AboutController : Controller
     {
         string Baseurl = "https://localhost:7071/";

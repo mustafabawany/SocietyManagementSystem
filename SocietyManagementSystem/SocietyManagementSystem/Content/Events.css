@@ -55,3 +55,23 @@ hr {
 .register:hover {
     color:white;
 }
+
+
+
+
+.card-body-icon {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    margin-left:-150px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card-body-icon a {
+    font-size: 35px;
+}
+   
+.card-body-icon:hover {
+    color: grey;
+    cursor: pointer;
+} 

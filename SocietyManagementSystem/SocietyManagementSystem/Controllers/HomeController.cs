@@ -6,7 +6,8 @@ using System.Web.Mvc;
 
 namespace SocietyManagementSystem.Controllers
 {
-    //[Authorize]
+    [Authorize]
+
 
     public class HomeController : Controller
     {

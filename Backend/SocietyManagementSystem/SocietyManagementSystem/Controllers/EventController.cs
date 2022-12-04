@@ -66,23 +66,22 @@ namespace SocietyManagementSystem.Controllers
             return Ok(returnMessage);
         }
 
-        [HttpPost]
-        [Route("Delete/")]
-        public async Task<IActionResult> DeleteEvent([FromRoute] Guid EventId)
+        [HttpDelete("DeleteById")]
+        public async Task<IActionResult> DeleteEvent(Guid EventId)
         {
             HttpResponseMessage returnMessage = new HttpResponseMessage();
 
             try
             {
                 var existingEvent = await SocietyDbContext.Events.FindAsync(EventId);
-                
+
                 if (existingEvent == null)
                 {
-                    return NotFound();
+                    return NotFound();  
                 }
-                
+
                 SocietyDbContext.Events.Remove(existingEvent);
-                await SocietyDbContext.SaveChangesAsync();
+                SocietyDbContext.SaveChanges();
                 string message = ($"Event Deleted");
 
                 returnMessage = new HttpResponseMessage(HttpStatusCode.Created);
@@ -136,5 +135,36 @@ namespace SocietyManagementSystem.Controllers
 
             return Ok(returnMessage);
         }
+
+        [HttpGet("GetDataById")]
+        public async Task<IActionResult> EditEvents( string Id )
+        {
+
+            HttpResponseMessage returnMessage = new HttpResponseMessage();
+
+            try
+            {
+                var societyName = SocietyDbContext.Societies.Where(x => x.Vice_president_id == Id || x.President_id == Id || x.Gs_id == Id || x.Treasurer_id ==Id ).Select(x => x.SocietyName);
+                
+                string s = string.Join("", societyName);
+                if(s != null)
+                {
+                    var eventId = SocietyDbContext.Events.Where(y => y.SocietyName == s);
+                    
+                    return Ok(eventId);
+                }
+                
+
+  
+            }
+            catch (Exception ex)
+            {
+                returnMessage = new HttpResponseMessage(HttpStatusCode.ExpectationFailed);
+                returnMessage.RequestMessage = new HttpRequestMessage(HttpMethod.Post, ex.ToString());
+            }
+          
+            return NotFound();
+        }
+
     }
 }
