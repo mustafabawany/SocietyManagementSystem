@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gfdg9W/VKdgRNlbL7FiLNSjWX2eFhobFTLUnE4Z9II86G0QNLFZN8S8sawH+Q0CjmqDQ43DrubTKCr62dCCzzw==",
+  "dgSpecHash": "HlWkaTbKQtvf949VSqIQ+JCufDVLU3OcM7RJbv4U1yzEaqtjsvqPMp4HgkKeHGcB4DbVSW2bP5djZq7Adz7zNw==",
   "success": true,
-  "projectFilePath": "D:\\University\\7th-Semester\\IPT\\Project2\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
+  "projectFilePath": "D:\\University\\7th-Semester\\IPT\\Final-Project2\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hp\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
