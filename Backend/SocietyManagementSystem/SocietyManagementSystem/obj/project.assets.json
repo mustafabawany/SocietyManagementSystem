@@ -3727,11 +3727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\University\\7th-Semester\\IPT\\Project2\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
+      "projectUniqueName": "D:\\University\\7th-Semester\\IPT\\Final-Project2\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
       "projectName": "SocietyManagementSystem",
-      "projectPath": "D:\\University\\7th-Semester\\IPT\\Project2\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
+      "projectPath": "D:\\University\\7th-Semester\\IPT\\Final-Project2\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\SocietyManagementSystem.csproj",
       "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-      "outputPath": "D:\\University\\7th-Semester\\IPT\\Project2\\SocietyManagementSystem\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\obj\\",
+      "outputPath": "D:\\University\\7th-Semester\\IPT\\Final-Project2\\Backend\\SocietyManagementSystem\\SocietyManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
