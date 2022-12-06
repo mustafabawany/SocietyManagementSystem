@@ -73,7 +73,7 @@ namespace SocietyManagementSystem___Desktop
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:7071/");
+                client.BaseAddress = new Uri("https://society-management-api.azurewebsites.net/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 EventRegistration reg = new EventRegistration()
                 {
@@ -92,12 +92,14 @@ namespace SocietyManagementSystem___Desktop
                 {
                     Home homepage = new Home();
                     this.Hide();
+                    MessageBox.Show("Registration Successful.");
                     homepage.ShowDialog();
 
                 }
                 else
                 {
                     this.Hide();
+                    MessageBox.Show("Registration Not Successful.");
                     Registration regi = new Registration();
                     regi.ShowDialog();
                 }

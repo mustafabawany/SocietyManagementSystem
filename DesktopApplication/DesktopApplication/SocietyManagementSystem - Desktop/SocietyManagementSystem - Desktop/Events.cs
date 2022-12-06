@@ -51,7 +51,7 @@ namespace SocietyManagementSystem___Desktop
 
         private async void Events_Load(object sender, EventArgs e)
         {
-            string Baseurl = "https://localhost:7071/";
+            string Baseurl = "https://society-management-api.azurewebsites.net/";
 
             List<EventsInfo> _tempEventInfo = new List<EventsInfo>();
             using (var httpClient = new HttpClient())

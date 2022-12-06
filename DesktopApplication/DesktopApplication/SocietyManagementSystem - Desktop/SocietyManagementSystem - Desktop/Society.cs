@@ -48,7 +48,7 @@ namespace SocietyManagementSystem___Desktop
 
         private async void Society_Load(object sender, EventArgs e)
         {
-            string Baseurl = "https://localhost:7071/";
+            string Baseurl = "https://society-management-api.azurewebsites.net/";
 
             List<SocietyHierarchy> _tempSocietyDetails = new List<SocietyHierarchy>();
 

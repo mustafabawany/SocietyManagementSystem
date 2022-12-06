@@ -35,7 +35,7 @@ namespace SocietyManagementSystem___Desktop
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:7071/");
+                client.BaseAddress = new Uri("https://society-management-api.azurewebsites.net/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 Student student = new Student()
                 {
