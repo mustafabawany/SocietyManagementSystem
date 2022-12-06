@@ -1,0 +1,73 @@
+﻿@model SocietyManagementSystem.Models.EventAndRegistrationParent
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" type="text/css" href="~/Content/Registration.css" />
+
+}
+
+<div class="wrapper">
+    <div class="form-left">
+            <h2 class="text-uppercase">information</h2>
+            <h5>
+                @Model._EventInfo.Name
+
+            </h5>
+            <p class="text">
+                <span>
+                    Venue :  @Model._EventInfo.Venue
+                </span>
+            </p>
+            <p class="text">
+                <span>Date : @Model._EventInfo.Date_Time.Date </span>
+
+            </p>
+
+            <div class="form-field">
+                <input type="submit" class="account" value="Seminar">
+            </div>
+        </div>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post , new { @class = "form-right" }) )
+{
+    @*<form class="form-right" method="post">*@
+        <h2 class="text-uppercase">Registration form</h2>
+        <div class="row">
+            <div class="col-sm-6 mb-3">
+                <label>First Name</label>
+                @Html.TextBoxFor(m => m._EventRegistration.firstName, new { @class = "input-field" })
+
+            </div>
+            <div class="col-sm-6 mb-3">
+                <label>Last Name</label>
+                @Html.TextBoxFor(m => m._EventRegistration.lastName, new { @class = "input-field" })
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 mb-3">
+                <label>Event ID</label>
+                @Html.TextBoxFor(m => m._EventRegistration.eventId, new { @class = "input-field" })
+
+            </div>
+            <div class="col-sm-6 mb-3">
+                @*  *@
+            <label>Student ID</label>
+            @Html.TextBoxFor(m => m._EventRegistration.studentId, new { @class = "input-field" })
+
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="option">
+            I agree to the <a href="#">Terms and Conditions</a>
+            <input type="checkbox" checked>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    <div class="form-field">
+        <input type="submit" value="Register" class="register" name="register">
+    </div>
+    @*</form>*@
+    }
+
+</div>

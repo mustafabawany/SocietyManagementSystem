@@ -1,0 +1,66 @@
+﻿
+@model SocietyManagementSystem.Models.EventInfo
+
+@{
+    ViewBag.Title = "Add Event";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" type="text/css" href="~/Content/Registration.css" />
+
+}
+
+
+<div class="wrapper">
+
+    @*@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-right" }))
+    {*@
+
+        <form class="form-right" method="post">
+        <h2 class="text-uppercase">ADD NEW EVENT FORM</h2>
+        <div class="row">
+            <div class="col-sm-6 mb-3">
+                <label>Event Name</label>
+                @Html.TextBoxFor(m => m.Name, new { @class = "input-field" })
+
+            </div>
+
+            <div class="col-sm-6 mb-3">
+                <label>Guest Name</label>
+                @Html.TextBoxFor(m => m.Guest_name, new { @class = "input-field" })
+
+            </div><div class="col-sm-6 mb-3">
+                <label>Venue</label>
+                @Html.TextBoxFor(m => m.Venue, new { @class = "input-field" })
+
+            </div><div class="col-sm-6 mb-3">
+                <label>Event Type</label>
+                @Html.TextBoxFor(m => m.Event_Type, new { @class = "input-field" })
+
+            </div><div class="col-sm-6 mb-3">
+                <label>Society Name</label>
+                @Html.TextBoxFor(m => m.SocietyName, new { @class = "input-field" })
+
+            </div><div class="col-sm-6 mb-3">
+                <label>Date & Time</label>
+                @Html.TextBoxFor(m => m.Date_Time, new { @class = "input-field" })
+
+            </div>
+
+        </div>
+        <div class="mb-3">
+            <label class="option">
+                I agree to the <a href="#">Terms and Conditions</a>
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="form-field">
+            <input type="submit" value="ADD" class="register" name="register">
+        </div>
+        </form>
+    @*}*@
+
+</div>
+
+
+
+

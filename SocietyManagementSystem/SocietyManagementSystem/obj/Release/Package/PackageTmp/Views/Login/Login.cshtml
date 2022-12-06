@@ -1,0 +1,46 @@
+﻿
+@model SocietyManagementSystem.Models.Login
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" type="text/css" href="~/Content/Login.css" />
+
+}
+
+<section class="wrapper2">
+
+    <div class="container2" id="container">
+        <div class="form-container sign-in-container">
+            @*@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {*@
+            <form method="post">
+
+                <h1>SIGN IN</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                @Html.EditorFor(m => m.StudentId)
+                @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @type = "password" } })
+            <div style="color:red; margin-top:15px;margin-bottom:15px;">
+                @Html.ValidationMessage("CustomError")
+
+            </div>
+
+                <button>Sign In</button>
+                @*}*@
+            </form>
+
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+            </div>
+        </div>
+    </div>
+
+
+
+</section>
+

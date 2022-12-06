@@ -9,65 +9,65 @@
 
 <div class="wrapper">
     <div class="form-left">
-            <h2 class="text-uppercase">information</h2>
-            <h5>
-                @Model._EventInfo.Name
+        <h2 class="text-uppercase">information</h2>
+        <h5>
+            @Model._EventInfo.Name
 
-            </h5>
-            <p class="text">
-                <span>
-                    Venue :  @Model._EventInfo.Venue
-                </span>
-            </p>
-            <p class="text">
-                <span>Date : @Model._EventInfo.Date_Time.Date </span>
+        </h5>
+        <p class="text">
+            <span>
+                Venue :  @Model._EventInfo.Venue
+            </span>
+        </p>
+        <p class="text">
+            <span>Date : @Model._EventInfo.Date_Time.Date </span>
 
-            </p>
+        </p>
 
-            <div class="form-field">
-                <input type="submit" class="account" value="Seminar">
-            </div>
+        <div class="form-field">
+            <input type="submit" class="account" value="Seminar">
         </div>
-@using (Html.BeginForm("Index", "Home", FormMethod.Post , new { @class = "form-right" }) )
-{
+    </div>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post , new { @class = "form-right" }) )
+        {
     @*<form class="form-right" method="post">*@
         <h2 class="text-uppercase">Registration form</h2>
         <div class="row">
             <div class="col-sm-6 mb-3">
                 <label>First Name</label>
-                @Html.TextBoxFor(m => m._EventRegistration.firstName, new { @class = "input-field" })
+                @Html.TextBox("FirstName", null, new { @class = "input-field" })
 
             </div>
             <div class="col-sm-6 mb-3">
                 <label>Last Name</label>
-                @Html.TextBoxFor(m => m._EventRegistration.lastName, new { @class = "input-field" })
+                @Html.TextBox("LastName", null, new { @class = "input-field" })
 
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6 mb-3">
                 <label>Event ID</label>
-                @Html.TextBoxFor(m => m._EventRegistration.eventId, new { @class = "input-field" })
-
+                @Html.TextBox("eventId", null, new { @class = "input-field" })
             </div>
             <div class="col-sm-6 mb-3">
                 @*  *@
-            <label>Student ID</label>
-            @Html.TextBoxFor(m => m._EventRegistration.studentId, new { @class = "input-field" })
+                <label>Student ID</label>
+                @Html.TextBox("StudentId", null, new { @class = "input-field" })
 
+            </div>
         </div>
-    </div>
-    <div class="mb-3">
-        <label class="option">
-            I agree to the <a href="#">Terms and Conditions</a>
-            <input type="checkbox" checked>
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="form-field">
-        <input type="submit" value="Register" class="register" name="register">
-    </div>
+        <div class="mb-3">
+            <label class="option">
+                I agree to the <a href="#">Terms and Conditions</a>
+                <input type="checkbox" checked>+
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="form-field">
+            <input type="submit" value="Register" class="register" name="register">
+        </div>
     @*</form>*@
     }
 
 </div>
+@*@Html.TextBoxFor(m => m._EventRegistration.FirstName, new { @class = "input-field" })*@
