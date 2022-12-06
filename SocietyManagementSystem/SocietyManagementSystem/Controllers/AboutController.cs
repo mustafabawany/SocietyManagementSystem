@@ -13,7 +13,7 @@ namespace SocietyManagementSystem.Controllers
     [Authorize]
     public class AboutController : Controller
     {
-        string Baseurl = "https://localhost:7071/";
+        string Baseurl = "https://society-management-api.azurewebsites.net/";
         // GET: SOCIETY HIERARCHY 
         public async Task<ActionResult> Index(string id)
         {

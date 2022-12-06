@@ -1,5 +1,4 @@
 ﻿
-@model SocietyManagementSystem.Models.Login
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -22,12 +21,15 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your account</span>
-                @Html.EditorFor(m => m.StudentId)
-                @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @type = "password" } })
-            <div style="color:red; margin-top:15px;margin-bottom:15px;">
-                @Html.ValidationMessage("CustomError")
 
-            </div>
+                @Html.TextBox("StudentId")
+
+                @Html.Password("Password")
+
+                <div style="color:red; margin-top:15px;margin-bottom:15px;">
+                    @Html.ValidationMessage("CustomError")
+
+                </div>
 
                 <button>Sign In</button>
                 @*}*@

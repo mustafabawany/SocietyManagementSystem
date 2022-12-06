@@ -320,3 +320,7 @@ D:\University\7th-Semester\IPT\Final-Project2\SocietyManagementSystem\SocietyMan
 D:\University\7th-Semester\IPT\Final-Project2\SocietyManagementSystem\SocietyManagementSystem\obj\Debug\SocietyManagementSystem.csproj.CopyComplete
 D:\University\7th-Semester\IPT\Final-Project2\SocietyManagementSystem\SocietyManagementSystem\obj\Debug\SocietyManagementSystem.dll
 D:\University\7th-Semester\IPT\Final-Project2\SocietyManagementSystem\SocietyManagementSystem\obj\Debug\SocietyManagementSystem.pdb
+D:\University\7th-Semester\IPT\Final-Project2\SocietyManagementSystem\SocietyManagementSystem\bin\EntityFramework.dll
+D:\University\7th-Semester\IPT\Final-Project2\SocietyManagementSystem\SocietyManagementSystem\bin\EntityFramework.SqlServer.dll
+D:\University\7th-Semester\IPT\Final-Project2\SocietyManagementSystem\SocietyManagementSystem\bin\EntityFramework.xml
+D:\University\7th-Semester\IPT\Final-Project2\SocietyManagementSystem\SocietyManagementSystem\bin\EntityFramework.SqlServer.xml

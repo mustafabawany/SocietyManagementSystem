@@ -22,7 +22,7 @@ namespace SocietyManagementSystem.Controllers
         // GET: Registration
 
         //Set the base url
-        string Baseurl = "https://localhost:7071/";
+        string Baseurl = "https://society-management-api.azurewebsites.net/";
         EventAndRegistrationParent eventAndRegistrationParent = new EventAndRegistrationParent();
 
         //GET REQUEST.
@@ -30,7 +30,7 @@ namespace SocietyManagementSystem.Controllers
         {
             ViewBag.id = Id;
             EventInfo _eventInfo = new EventInfo();
-
+               
             using (var httpClient = new HttpClient())
             {
                 // Passing service base url
@@ -56,31 +56,29 @@ namespace SocietyManagementSystem.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> Index(EventAndRegistrationParent obj)
+        public async Task<ActionResult> Index(string FirstName , string LastName, string eventId, string StudentId)
         {
+            EventRegistration _eventRegistration = new EventRegistration();
 
-            var json = new
-            { 
-                obj._EventRegistration.studentId,
-                obj._EventRegistration.firstName,
-                obj._EventRegistration.lastName,
-                obj._EventRegistration.eventId
-            };
+            _eventRegistration.FirstName = FirstName;
+            _eventRegistration.LastName = LastName;
+            _eventRegistration.StudentId= StudentId;
+            _eventRegistration.eventId = eventId;
+
+
 
             //POST DATA TO /api/Registration
             using (var httpClient = new HttpClient())
             {
- 
-                var jsonItem = JsonConvert.SerializeObject(json);
+
+                var jsonItem = JsonConvert.SerializeObject(_eventRegistration);
                 var content = new StringContent(jsonItem, Encoding.UTF8, "application/json");
 
-                //Sending request to find web api REST service resource GetAllEmployees using HttpClient
 
-                HttpResponseMessage Res = await httpClient.PostAsync("https://localhost:7071/api/Registration", content);
+                HttpResponseMessage Res = await httpClient.PostAsync("https://society-management-api.azurewebsites.net/api/Registration", content);
                 if (Res.IsSuccessStatusCode)
                 {
                     var apiResponse = Res.Content.ReadAsStringAsync().Result;
-                    //return Content(apiResponse);
                 }
 
             }

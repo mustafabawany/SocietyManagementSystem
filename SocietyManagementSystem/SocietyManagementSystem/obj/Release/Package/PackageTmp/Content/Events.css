@@ -1,0 +1,77 @@
+﻿body {
+}
+/* CAROUSEL SECTION  */
+
+#carousel {
+    margin-bottom: 3%;
+}
+
+.carousel-item {
+    background-color: white;
+}
+
+
+/* EVENT SECTION  */
+.upcoming h1, .past h1 {
+    margin-left: 1%;
+    margin-bottom: 3%;
+}
+
+.upcoming, .past {
+    margin-bottom: 3rem;
+}
+
+.card {
+    margin: 0 auto;
+    margin-bottom: 10%;
+}
+
+hr {
+    width: 25%;
+    margin: 3% auto;
+    border: 2px solid #242c42;
+}
+
+.event-type {
+    background-color: #242c42;
+    color:white;
+    position: relative;
+    width: 50%; 
+/*    ye width sahi hai , not working for Ahsan only */
+    text-align: center;
+    padding: 2%;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.details {
+    font-size: 14px;
+}
+.register {
+    text-decoration: none;
+}
+.register:hover {
+    color:white;
+}
+
+
+
+
+.card-body-icon {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    margin-left:-150px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card-body-icon a {
+    font-size: 35px;
+}
+   
+.card-body-icon:hover {
+    color: grey;
+    cursor: pointer;
+} 

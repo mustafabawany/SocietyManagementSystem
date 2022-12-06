@@ -15,21 +15,21 @@ position: relative;
 }
 
 .hero-image {
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../util/images/AboutPage/Hero1.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/R2gcGfd/Hero2.jpg");
 }
 
 .hero-image2 {
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../util/images/AboutPage/Hero2.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/bBf9K4w/Hero1.jpg");
 }
 
-.hero-image3 {
+/*.hero-image3 {
 background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../util/images/AboutPage/Hero1.jpg");
-}
+}*/
 /* HERO SECTION ^^^   */
 
 /* ABOUT US SECTION  */
 .about-us-section {
-width: 100%;
+width: 80%;
 min-height: 70vh;
 background-color: white;
 }
@@ -43,7 +43,7 @@ padding-top: 100px;
 
 .content-section {
 float: right;
-width: 70%;
+width: 80%;
 }
 
 .content-section .title {

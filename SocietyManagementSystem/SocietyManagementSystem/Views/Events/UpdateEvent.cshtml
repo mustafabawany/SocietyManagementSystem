@@ -10,10 +10,10 @@
 
 <div class="wrapper">
 
-    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-right" }))
-        {
+    @*@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-right" }))
+        {*@
 
-    @*<form class="form-right" method="post">*@
+    <form class="form-right" method="post">
         <h2 class="text-uppercase">UPDATE EVENT FORM</h2>
         <div class="row">
             <div class="col-sm-6 mb-3">
@@ -22,33 +22,35 @@
                     @ViewBag.id
 
                 </span>
-
             </div>
             <div class="col-sm-6 mb-3">
                 <label>Event Name</label>
-                @Html.TextBoxFor(m => m.Name, new { @class = "input-field" })
-
+                @Html.TextBox("Name", null, new { @class = "input-field" });
             </div>
 
             <div class="col-sm-6 mb-3">
                 <label>Guest Name</label>
-                @Html.TextBoxFor(m => m.Guest_name, new { @class = "input-field" })
+                @Html.TextBox("Guest_name", null, new { @class = "input-field" });
 
-            </div><div class="col-sm-6 mb-3">
+            </div>
+            <div class="col-sm-6 mb-3">
                 <label>Venue</label>
-                @Html.TextBoxFor(m => m.Venue, new { @class = "input-field" })
+                @Html.TextBox("Venue", null, new { @class = "input-field" });
 
-            </div><div class="col-sm-6 mb-3">
+
+            </div>
+            <div class="col-sm-6 mb-3">
                 <label>Event Type</label>
-                @Html.TextBoxFor(m => m.Event_Type, new { @class = "input-field" })
+                   @Html.TextBox("Event_Type", null, new { @class = "input-field" });
+            </div>
+                <div class="col-sm-6 mb-3">
+                    <label>Society Name</label>
+                    @Html.TextBox("SocietyName", null, new { @class = "input-field" });
 
-            </div><div class="col-sm-6 mb-3">
-                <label>Society Name</label>
-                @Html.TextBoxFor(m => m.SocietyName, new { @class = "input-field" })
-
-            </div><div class="col-sm-6 mb-3">
+                </div>
+            <div class="col-sm-6 mb-3">
                 <label>Date & Time</label>
-                @Html.TextBoxFor(m => m.Date_Time, new { @class = "input-field" })
+                @Html.TextBox("Date_Time", null, new { @class = "input-field" });
 
             </div>
 
@@ -63,8 +65,8 @@
         <div class="form-field">
             <input type="submit" value="UPDATE" class="register" name="register">
         </div>
-    @*</form>*@
-    }
+    </form>
+    @*}*@
 
 </div>
 
