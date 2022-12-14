@@ -1,5 +1,9 @@
 # FAST Society Management System
 
+Website Link: https://society-management-mvc.azurewebsites.net/
+<br>
+Backend Link: https://society-management-api.azurewebsites.net/
+
 ## Overview
 
 FAST Society Management System is a platform for all the socities in FAST where they can view, post, update and delete information related to their socieites.
