@@ -9,7 +9,6 @@ Backend Link: https://society-management-api.azurewebsites.net/
 FAST Society Management System is a platform for all the socities in FAST where they can view, post, update and delete information related to their socieites.
 
 ## How to execute
-NOTE: You must have pip and python pre-installed in your system
 
 1. Clone this project on your local repository 
 
